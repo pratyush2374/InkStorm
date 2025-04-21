@@ -1,0 +1,64 @@
+Automatic docs
+    Swagger UI and Redoc 
+User defined types using Pydantic
+Based on JSON schema and Open API standards 
+HTTP basic
+OAuth and JWT
+API keys in
+    Headers
+    Query params 
+    Cookies
+Dependency injection
+Starlette features
+    Websocket support 
+    GraphQL support 
+    In-process backgroud tasks 
+    Startup and Shutdown events
+    Test client builds on request 
+    CORS, gzip, static files, streaming responses
+    Session and cookie support 
+DB support - SQL, NoSQL
+
+
+---------------------------------------------------------------
+
+# Query params
+# @app.get("/blogs")
+# def get_blogs(limit: int = 10, published: bool = True, sort: Optional[str] = None):
+#     if published:
+#         return {"message": f"Getting {limit} published blogs from the DB"}
+#     else:
+#         return {"message": f"Getting {limit} un-published blogs from the DB"}
+
+
+# @app.get("/blog/{id}")
+# def get_blogs_by_id(id: int):
+#     return {"message": id}
+
+---------------------------------------------------------------
+
+# Meth 1
+# @app.get("/blog/{id}", status_code=status.HTTP_200_OK)
+# def get_blogs_by_id(id: int, response: Response, db: Session = Depends(get_db)):
+#     blog_by_id = db.query(models.BlogModel).filter(models.BlogModel.id == id).first()
+#     if not blog_by_id:
+#         response.status_code = status.HTTP_404_NOT_FOUND
+#         return {"message": f"Blog id {id} not found"}
+#     return blog_by_id
+
+
+---------------------------------------------------------------
+
+# Custom port
+# if __name__ == "__main__":
+#     uvicorn.run(app, host="127.0.0.1", port=3000)
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
